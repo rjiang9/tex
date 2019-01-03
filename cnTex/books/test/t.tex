@@ -1,0 +1,17 @@
+\documentclass{article}
+\XeTeXlinebreaklocale "zh"                %中文断行
+\XeTeXlinebreakskip = 0pt plus 1pt    % 加一pt弹性空间以左右对齐
+
+\usepackage{fontspec}                      % 设定字体相关
+\setmainfont{PMingLiU}                    %        全篇默认字体
+\setsansfont{DFKai-SB}                     %        衬
+
+\newfontfamily\shu{FZShuTi}            % 自定义字体
+
+\begin{document}
+中文測試，這些字使用細明體。 \\
+{\sffamily 這些字會改用華康中黑體} \\
+{这些字呢？仍然是设定的mainfont细明体} \\
+{\shu 这里是舒同体}
+\end{document}
+

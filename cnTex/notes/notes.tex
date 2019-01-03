@@ -1,0 +1,279 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec,xunicode,xltxtra,lipsum,amsmath}
+\usepackage{titlesec}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+\usepackage{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage{verbatim}
+\usepackage{verbatimbox}
+\usepackage{amsmath}      %数学符号包
+\usepackage[colorlinks=true, linkcolor=blue ]{hyperref}         % 目录带连接
+
+\usepackage{graphicx} 		                              % 插入图片
+\usepackage{setspace}
+\usepackage{indentfirst}                                % 段首缩进
+\XeTeXlinebreaklocale "zh"    	           							% 中文断行
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt			    % 中文断行
+\renewcommand{\baselinestretch}{1.25}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% \setdefaultlanguage{english}  		% 设置默认语言 english | chinese
+
+% 设置字体
+\setsansfont{Calibri}
+\setmainfont[BoldFont=SimHei]{SimHei}
+
+\titleformat{\section}{\Large\song}{\thesection}{1em}{}
+
+% 新定义字体
+\newfontfamily\shu{FZShuTi}                           % 方正舒体
+\newfontfamily\nming{MingLiU_HKSCS} 		% 新细明体
+\newfontfamily\lishu{LiSu} 								% 隶书
+\newfontfamily\hei{SimHei} 								% 黑体
+\newfontfamily\yahei{Microsoft YaHei} 			% 微软雅黑
+\newfontfamily\henghei{Microsoft JhengHei}  % 微軟正黑體
+\newfontfamily\song{SimSun}  			% 宋体
+\newfontfamily\nsong{NSimSun}  		% 新宋体
+\newfontfamily\yao{FZYaoTi}                % 方正姚体
+\newfontfamily\ming{MingLiU} 			% 细明体
+\newfontfamily\youyuan{YouYuan}		% 幼圆
+\newfontfamily\kai{KaiTi}         			% 楷体
+\newfontfamily\cai{STCaiyun}   			% 华文彩云
+
+
+\usepackage{diagbox}                       %表格
+\usepackage{enumitem}               % list
+\setlist[enumerate]{itemsep=0mm}    % List Line space
+
+
+\usepackage{paralist}                % compact list
+
+\usepackage{listings} % needed for the inclusion of source code
+\lstset{basicstyle = \ttfamily, frame      = single}
+
+% \makeindex                             % 加索引
+% \index{法华经}
+
+\begin{document}
+
+\title{\hei XeTeX使用小结}
+\author{\song 江长里}
+\date{\kai 2018年2月21日}
+\maketitle
+
+\tableofcontents
+\newpage
+
+
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+%\setlength{\parindent}{2em}  %中文缩进两个汉字位
+
+\LaTeX
+
+
+常用的环境及其作用。flushleft:环境中的内容居左。
+
+flushright:环境中的内容居右。
+center:环境中的内容居中。
+itemize:无编号列表
+enumerate:有编号列表
+description:带描述列表
+quote:引用，使得整段缩进
+verse:诗歌专用，\\可以断行，两个空行的分段则生成一个空行。
+\verb|C:\xxx\yyy\zzz|
+
+
+\tiny tiny
+\small small
+\normalsize normalsize
+\large large
+\Large Large
+\huge huge
+\Huge Huge
+
+表格
+
+\begin{table}[hb] 
+	\caption[短标题]{装模做样的表格}
+	\begin{center}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{如何追女孩的建议}\\
+        \hline 
+        \diagbox{财气}{建议}{颜值} & 帅& 挫\\
+        \hline
+        有钱花 & 没啥好说的 & 没啥好说的 \\
+        \hline
+        叮当响 & 没啥好说的 & 没啥好说的  \\
+        \hline
+      \end{tabular}
+	\end{center}	
+\end{table}
+
+\\
+
+懒得打字所以复制了很多遍。
+	
+%可以尝试换为其他的参数
+\begin{table}[hb] 
+	\caption[短标题]{装模做样的表格}
+	\begin{center}
+		\begin{tabular}{c}
+			\hline
+			这是一个表格\\
+			\hline
+			这是一个表格\\
+			\hline
+			这是一个表格\\
+			\hline
+		\end{tabular}
+	\end{center}	
+\end{table}
+
+
+
+懒得打字所以复制了\large 很多遍。
+
+
+
+
+
+\\
+
+原文打印
+
+\begin{verbatim}
+
+\begin{verbatim}和 \ * {  } $ \ end{verbatim} 之间的东西直接打印。
+
+\end{verbatim}
+
+在段落中\verb+text+ 可将分隔符+之间的文本直接打印，其中+可以为除了*和空格的任意字符。
+
+\begin{enumerate} [{第} i {、}]
+ 	\item 一二三四五
+ 	\item 上山打老虎
+\end{enumerate} 
+
+
+\begin{enumerate}
+	\item 带数字的列表
+	\item 列表可以嵌套
+	\begin{itemize}
+		\item 简单列表默认
+		\item[+] 可以修改项目标记
+		\begin{description}
+			\item[标签] 标签列表的标签显示取决于环境
+		\end{description}
+	\end{itemize}
+\end{enumerate}
+
+
+\section[什么？]{特殊字符和符号}
+
+引号
+
+``双引号不能再用中文`输入法'输入''
+
+
+破折号
+
+中文一般不用连字号，除了电话号码.以及短破折``12--13页''这种表述长破折号`------`用于---犹豫等语气$的长度和他们不同
+
+波浪号
+省略号
+
+
+
+\section{列出source code}
+\lstinputlisting[language=Tex]{source.tex}
+
+\section{List}
+
+\begin{itemize}
+	\item 工人
+	\item 农民 
+	\item 学生 
+\end{itemize}
+\lstinputlisting[language=Tex]{list.tex}
+
+
+* How to make list items compact?
+
+\begin{compactitem}
+	\item 工人
+	\item 农民 
+	\item 学生 
+\end{compactitem}
+
+\lstinputlisting[language=Tex]{compactlist.tex}
+
+
+
+
+\section{字体列表}
+(默认字体) 以前使用CJK进行中文的排版，需要自己生成字体库，近日，出现了XeTeX，\yao （姚体）可以比较好的解决中文字体问题，不需要额外
+生成LaTeX字体库，\kai （楷体）直接使用计算机 \henghei （微軟正黑體）系统里的字体。
+
+
+本文使用了大量本机自带的字体。
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\caption{字体列表 office station}
+
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\hei 字体 & \hei 命令 & \hei 字体效果 \\
+\hline
+
+\kai 宋体 & \verb+\song+ & \song 宋体 \\
+\kai 新宋体 & \verb+\nsong+ & \nsong 新宋体 \\
+\kai 楷体 & \verb+\kai+ & \kai 楷体 \\
+\kai 黑体 & \verb+\hei+ & \hei 黑体 \\
+\kai 隶书 & \verb+\lishu+ & \lishu 隶书 \\
+\kai 方正舒体 & \verb+\shu+ & \shu  方正舒体 \\
+\kai 方正姚体 & \verb+\yao+ & \yao 方正姚体 \\
+\kai 幼圆 & \verb+\youyuan+ & \youyuan 幼圆 \\
+\kai 微软雅黑 & \verb+\yahei+ & \yahei 微软雅黑 \\
+\kai 微軟正黑體 & \verb+\henghei+ & \henghei 微軟正黑體 \\
+\kai 細明體 & \verb+\ming+ & \ming 細明體 \\
+\kai 新细明体 & \verb+\nming+ & \nming 新细明体 \\
+\kai 华文彩云 & \verb+\cai+ & \cai 华文彩云 \\
+
+
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+图片插入效果图：
+
+\begin{figure}[htbp]
+\centering    % 使后面的内容居中
+
+		\includegraphics[width=155pt]{sea.jpg}
+
+\caption{A 300 Hit!}
+\label{fig:300}
+\end{figure}
+
+
+
+
+
+% \printindex                             % 印索引	
+	
+\end{document}
+

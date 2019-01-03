@@ -1,0 +1,14 @@
+PWD C:/Users/rjiang/Desktop/zjl/books/test
+INPUT C:/Users/rjiang/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT abc.tex
+OUTPUT abc.log
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/minimal.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/minimal.cls
+INPUT abc.aux
+INPUT abc.aux
+OUTPUT abc.aux
+OUTPUT abc.pdf
+INPUT C:/Users/rjiang/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT abc.aux
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb

@@ -1,0 +1,22 @@
+FZShuTi,方正舒体
+MingLiU_HKSCS,細明體_HKSCS
+LiSu,隶书
+STCaiyun,华文彩云
+Microsoft YaHei,微软雅黑
+NSimSun,新宋体
+FZYaoTi,方正姚体
+MingLiU,細明體
+SimHei,黑体
+Microsoft JhengHei,微軟正黑體
+SimSun,宋体:style=Regular
+Microsoft JhengHei,微軟正黑體
+YouYuan,幼圆
+MingLiU_HKSCS\-ExtB,細明體_HKSCS\-ExtB
+PMingLiU,新細明體
+PMingLiU\-ExtB,新細明體\-ExtB
+DFKai\-SB,標楷體
+MingLiU\-ExtB,細明體\-ExtB
+KaiTi,楷体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+DengXian,方正等线
+Microsoft YaHei,微软雅黑:style=Bold,Negreta,tučné,fed,Fett,Έντονα,Negrita,Lihavoitu,Gras,Félkövér,Grassetto,Vet,Halvfet,Pogrubiony,Negrito,Полужирный,Fet,Kalın,Krepko,Lodia
+STFangsong,华文仿宋

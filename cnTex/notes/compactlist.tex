@@ -1,0 +1,28 @@
+2 ways:
+
+Load package paralist and set
+\usepackage{paralist}
+  \let\itemize\compactitem
+  \let\enditemize\endcompactitem
+  \let\enumerate\compactenum
+  \let\endenumerate\endcompactenum
+  \let\description\compactdesc
+  \let\enddescription\endcompactdesc
+  \pltopsep=\medskipamount
+  \plitemsep=1pt
+  \plparsep=1pt
+
+or way2:
+
+Load package enumitem and \setlist{nosep}
+
+\usepackage{enumitem }
+If Global, this line is enough:
+    \setlist[enumerate]{itemsep=0mm}
+
+If just specifc, on Specific list, do:
+\begin{compactitem}
+	\item cat
+	\item dog 
+	\item fox 
+\end{compactitem}

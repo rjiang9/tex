@@ -1,0 +1,18 @@
+# Fdb version 3
+["pdflatex"] 1470346206 "1.tex" "1.pdf" "1" 1470346207
+  "1.aux" 1470346206 504 8629fb0c10133805cf0a898a30b94f23 ""
+  "1.tex" 1470345962 705 9c29d1fb487dcba3544ea6626368a1b3 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Program Files/MiKTeX 2.9/tex/latex/base/article.cls" 1465905132 19821 310da678527a7dfe2a02c88af38079b7 ""
+  "C:/Program Files/MiKTeX 2.9/tex/latex/base/omscmr.fd" 1465905136 2256 80ce1168fb4ce6a85583a9cf8972c013 ""
+  "C:/Program Files/MiKTeX 2.9/tex/latex/base/size10.clo" 1465905130 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "C:/Users/rjiang/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1470331496 3822511 5b1901aa40abd2288e0c21be634d5f85 ""
+  "C:/Users/rjiang/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1470342411 72528 09aa85c77d6e6f58c39d2027f649c440 ""
+  (generated)
+  "1.pdf"
+  "1.log"
+  "1.aux"

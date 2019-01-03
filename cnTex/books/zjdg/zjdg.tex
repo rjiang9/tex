@@ -1,0 +1,94 @@
+% -*- coding: utf-8 -*-
+% Compile: xelatex zjdg.tex
+
+% --- 导言区 ---
+%\documentclass[11pt]{book}
+%\usepackage{ctex}   
+
+\documentclass[11pt]{ctexbook}
+\ctexset{
+  abstractname = {概要},
+  bibname = {文\quad 献}
+}
+
+
+
+
+\usepackage{enumitem}     %列表縮進
+
+
+
+
+\AddEnumerateCounter{\chinese}{\chinese}{}                                                                      % 中文序列
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}        %中文日期
+%\usepackage[colorlinks,linkcolor=blue]{hyperref}
+%\usepackage{graphicx}                      % 插入圖片 \includegraphics[height=15pt]{hit300.png}
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,
+            linkcolor=black
+            ]{hyperref}                               %目錄跳轉
+
+% overfull \hbox error
+\hfuzz=\maxdimen
+\tolerance=10000
+\hbadness=10000
+
+% footnote hang
+\makeatletter
+%\renewcommand\@makefntext[1]{\leftskip=2em\hskip-2em\@makefnmark#1}
+\makeatother
+
+
+
+
+% makes a new footnote command \fn{} 
+\newcommand{\fn}{\footnote}
+\newcommand{\kai}{\kaishu}
+% footnote font size: \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+\let\footnotesize\tiny            
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry} 
+
+%\usepackage{indentfirst}                                     % 段首缩进
+
+
+  
+\usepackage{makeidx}     % -- for 檢索 --
+\makeindex %  生成检索
+%在编译时，先用 xelatex/pdflatex 编译，接着用 makeindex 编译，最后再
+%用 xelatex/pdflatex 编译，才能得到带全文索引的文档。
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{御製宗鏡大綱}
+\author{永明壽禪師}
+\date{}
+\maketitle
+\newpage
+
+\tableofcontents    % 目录
+\newpage
+%\listoffigures      % 插图目录
+%\newpage
+%\listoftables       % 表格目录
+%\newpage
+
+
+\input{chapter/vol00}
+\input{chapter/vol01}
+%\input{chapter/vol02}
+
+
+% 文献
+\begin{thebibliography}{123456}
+\bibitem[Knuth1]{DK1} D. Knuth, T.A.O.C.P. , Vol. 1, Addison-Wesley, 1997.
+\bibitem[Knuth2]{DK2} D. Knuth, T.A.O.C.P. , Vol. 2, Addison-Wesley, 1997.
+\bibitem[Knuth3]{DK3} D. Knuth, T.A.O.C.P. , Vol. 3, Addison-Wesley, 1998.
+\end{thebibliography}
+
+
+\printindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+

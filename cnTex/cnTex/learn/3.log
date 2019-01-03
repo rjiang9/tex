@@ -1,0 +1,20 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100 64-bit) (preloaded format=xelatex 2016.8.4)  12 JUL 2017 16:05
+entering extended mode
+**./3.tex
+(3.tex
+LaTeX2e <2016/03/31> patch level 1
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+! Undefined control sequence.
+l.4 \setCJKmainfont
+                   [BoldFont={SimHei},ItalicFont={SIMKAI.TTF}]
+? x^^[[A^^[[B
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 428409
+ 19 string characters out of 3160633
+ 53087 words of memory out of 3000000
+ 3501 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 5i,0n,1p,76b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.

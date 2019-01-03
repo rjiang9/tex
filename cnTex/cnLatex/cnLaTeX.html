@@ -1,0 +1,171 @@
+<html>
+<head>
+  <title>Evernote Export</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/303788 (en-US, DDL); Windows/6.1.7601 Service Pack 1 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="45844"/>
+
+<div>
+<span><div><h1 style="text-align:center;font-weight: normal;display: block;font-size: 2em;color:black;">安装LaTeX中文字体 xGBKFonts</h1><div style="padding:10px 0px 10px 0px"><div style="padding:0px 5px 9px 5px;"><b>标签</b>: <a href="http://www.programgo.com/tag/linux/307325618/;jsessionid=077BA7A55982F2377F394EBCA7571DF9" title="ctex linux">ctex linux</a>   <a href="http://www.programgo.com/tag/linux/500764651/;jsessionid=077BA7A55982F2377F394EBCA7571DF9" title="linux ctex">linux ctex</a>   <a href="http://www.programgo.com/tag/linux/208267036/;jsessionid=077BA7A55982F2377F394EBCA7571DF9" title="ctex for linux">ctex for linux</a>  </div><div style="padding:0px 5px 0px 5px;"><b>转自</b>: <a href="http://blog.csdn.net/lishoubox/article/details/7381191" rel="nofollow,noindex" target="_blank" title="http://blog.csdn.net/lishoubox/article/details/7381191">http://blog.csdn.net/lishoubox/article/details/7381191</a></div></div><div style="word-wrap: break-word; word-break: normal;"><p style="text-indent:2em">在Windows下，目前的最佳却应该不是TeXLive2007，至少在我看来，当下MikTeX2.7还是要略胜一筹。尤其是Yap让人割舍不下。（TeXLive2007在windows下的一个问题是，所带的dvi浏览器，无法进行反向检索，对于写长篇文章的人来说，没有这个功能是很不方便的。）可MikTeX2.7安装字体也还是相当麻烦的，搞了很久，最后还是通过多年前的xGBKFonts来进行的。</p><p style="text-indent:2em">CTeX 论坛置顶的 ttf-setup 是很不稳定的工具，非常不推荐使用。它会让你从原先的对一劳永逸的奢望，陷入到无穷无尽的懊恼。xGBKFonts 在 http://www.hooklee.com/default.asp?t=TeX%2FLaTeX 有提供下载。</p><p style="text-indent:2em">Windows 下安装步骤：</p><p style="text-indent:2em">1) 下载、安装 MikTeX 2.7。它的文件默认分布在三处（也可能更多）：</p><p style="text-indent:2em">        系统程序文件夹（如 C:\program files\MikTeX 2.7\）</p><p style="text-indent:2em">        用户应用程序文件夹</p><p style="text-indent:2em">      （如 C:\documents and settings\用户名\local settings\Applicate Data\MikTeX 2.7\ 和</p><p style="text-indent:2em">        C:\documents and settings\用户名\Applicate Data\MikTeX 2.7\，还可能在 all users 用户名下）</p><p style="text-indent:2em">2) 安装 CTeX-fonts （里面有优化过的“宋楷黑仿隶幼”六种中文字体），注意将 fonts 装到一个独立的文件夹下，比如 d:\localtexmf\，以方便之后备份。</p><p style="text-indent:2em">3) 安装 CTeX-CS/ CTeX宏包 （此步可省）。</p><p style="text-indent:2em">目前的版本v1.5.4 发布于2006.04.16，有点老了，所以也可以不安装而自己设置。我是怕麻烦的人，就直接安装了。只是在装完以后，要更新一下CTeX宏包，更新到CTeX 0.8a。方法嘛，就是下载CTeX 宏包v0.8a，然后替换CTeX-CS给安装的0.7。具体位置，小小搜一下就知道了<img src="cnLaTeX_files/Image.gif" type="image/gif" alt="安装LaTeX中文字体 - zhanghong7329 - The Story of Sophia" border="0"/></p><p style="text-indent:2em">4) 使用xGBKFonts安装自己的字体。</p><p style="text-indent:2em">再说一下，xGBKFonts 在 http://www.hooklee.com/default.asp?t=TeX%2FLaTeX 有下载，不然就用google搜索。</p><p style="text-indent:2em">使用方法嘛，具体可以参考xGBKFonts里面的帮助。比如：</p><p style="text-indent:2em">(a) 运行命令</p><p style="text-indent:2em">xgbkfonts -usesys -o d: -cname ABC d:\localtexmf\fonts\truetype\xxx.ttf ABC</p><p style="text-indent:2em">（这基于我之前将CTeX-fonts安装在了d:\localtexmf）</p><p style="text-indent:2em">(b) 增加d:\localtexmf 为 miktex 的注册根文件夹</p><p style="text-indent:2em">运行开始菜单中，miktex 下的 Settings，在 “Roots” 中加入d:\localtexmf</p><p style="text-indent:2em">(c) 重建印象，刷新数据库</p><p style="text-indent:2em">i)    initexmf -u        （更新数据库）</p><p style="text-indent:2em">ii)    initexmf --mkmaps    （重新生成psfonts.map文件）</p><p style="text-indent:2em">iii)    initexmf -u        （更新数据库）</p><p style="text-indent:2em">5) 其它的很多设置</p><p style="text-indent:2em">比如安装一个粗宋体，然后设置为宋体的粗体。这叫富人的字体<img src="cnLaTeX_files/Image [1].gif" type="image/gif" alt="安装LaTeX中文字体 - zhanghong7329 - The Story of Sophia" border="0"/> 强烈推荐购买方正字体！更强烈推荐开发漂亮的开源字体，首推标宋（常用于学位论文封面，和特殊标题）和一些稍微写意一些的字体（如行书、草书、篆书等等）</p><p style="text-indent:2em">改这个文件：D:\localtexmf\tex\latex\CJK\GB\c19song.fd</p><p style="text-indent:2em">Okay, done. 一定要记得将 d:\localtexmf 备份，以后重装系统就不用再麻烦了。不过安装了非免费字体的用户可不要随便传播哦，版权保护还是要维护的。</p><div><br/></div><div style="text-indent:2em"><div>Macintosh下，使用MaCTeX啦。做法好像也类似，不过我只玩过几天，从来没想过在Mac下用LaTeX。一直鄙视Mac，光记住了它花哨的界面和昂贵的价格。同样不喜欢在Linux下将桌面美化成Mac OS X 的做法，简直画蛇添足。。。超喜欢 FreeBSD 中</div></div></div></div></span>
+</div>
+<hr>
+<a name="45849"/>
+
+<div>
+<span><div><h1 style="text-align:center;font-weight: normal;display: block;font-size: 2em;color:black;">Latex中文字体问题</h1><div style="padding:10px 0px 10px 0px"><div style="padding:0px 5px 9px 5px;"><b>标签</b>: <a href="http://www.programgo.com/tag/ubuntu/33787364/" title="ubuntu tex">ubuntu tex</a>   <a href="http://www.programgo.com/tag/ubuntu/27022221/" title="ubuntu texlive">ubuntu texlive</a>  </div><div style="padding:0px 5px 0px 5px;"><b>转自</b>: <a href="http://blog.csdn.net/xjwJava/article/details/7400893" rel="nofollow,noindex" target="_blank" title="http://blog.csdn.net/xjwJava/article/details/7400893">http://blog.csdn.net/xjwJava/article/details/7400893</a></div></div><div style="word-wrap: break-word; word-break: normal;"><p>正常安装好了texlive2011，英文显示正常，可是中文就一直纠结着。。。</p><p>用xelatex编译，能显示部分中文，但是很诡异地不能字体加粗或变为斜体，并且伴随着以下这些错误提示：</p><p><br/></p><p>LaTeX Font Warning: Font shape `EU1/AdobeSongStd(0)/m/sl' undefined<br/>
+(Font)              using `EU1/AdobeSongStd(0)/m/n' instead on input line 69.<br/><br/>
+Underfull \hbox (badness 10000) in paragraph at lines 69--69<br/></p><p><br/></p><p>Overfull \hbox (3.31209pt too wide) in paragraph at lines 101--101</p>
+ [][]\EU1/lmr/m/n/10.95 2009.9–2010.7[]|<br/>
+[1] (/tmp/.Resume-zh.tex.aux)<br/><br/>
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.<br/><br/>
+(see the transcript file for additional information)<br/>
+Error 35584 (driver return code) generating output;<br/>
+file /tmp/.Resume-zh.tex.pdf may not be valid.<br/><p>Transcript written on /tmp/.Resume-zh.tex.log.</p><p><br/></p><p>找了好多资料都解决不了，一直觉得是缺少什么东西没装。。可是网上说的xeCJK、xelatex之类的明明texlive2011都自带了呀。。百思不解。。。</p><p>最后，发现原来是个很坑爹的原因：有些系统能识别的字体是无法在latex使用的。。。。。。。</p><p>比如我的系统里，WenQuanYi Bitmap Song，WenQuanYi Bitmap Song，Adobe Song Std，Adobe Fangsong Std这些都识别不了，所以我的问题就是使用了不该使用的Adobe Song Std和Adobe Fangsong Std。。。。。。。</p><p><br/></p><p>如果有遇到类似错误提示的朋友，不妨试试也换换字体。。。</p><p><br/></p><p>PS：在ubuntu下可以用命令：</p><p>fc-list :lang=zh-cn<br/></p><div><br/></div><div>查出所有中文字体。</div></div></div></span>
+</div>
+<hr>
+<a name="45851"/>
+
+<div>
+<span><div><h1 style="text-align:center;font-weight: normal;display: block;font-size: 2em;color:black;">如何让LaTeX找到中文字体</h1><div style="padding:10px 0px 10px 0px"><div style="padding:0px 5px 9px 5px;"><b>标签</b>: <a href="http://www.programgo.com/tag/ios/551464254/" title="ios 7字体ttf">ios 7字体ttf</a>   <a href="http://www.programgo.com/tag/ios/778179156/" title="ios7字体ttf">ios7字体ttf</a>   <a href="http://www.programgo.com/tag/linux/979216224/" title="linux simsun.ttf">linux simsun.ttf</a>  </div><div style="padding:0px 5px 0px 5px;"><b>转自</b>: <a href="http://blog.csdn.net/Xeroo/article/details/580465" rel="nofollow,noindex" target="_blank" title="http://blog.csdn.net/Xeroo/article/details/580465">http://blog.csdn.net/Xeroo/article/details/580465</a></div></div><div style="word-wrap: break-word; word-break: normal;"><p>摘自<a href="http://blog.linuxeden.com/post/87877/3363">http://blog.linuxeden.com/post/87877/3363</a></p><p>ubuntu下面teTeX和cjk-latex装完后LaTeX默认是没法编译中文，因为缺少字体，这里是我把字体搞定的方法，共享之 &amp; Thanks to mylxiaoyi and wangyin.<br/></p><p>Latex 中文支持CJK的安装与配置</p><p>作者 mylxiaoyi | 十一月 19, '05 @ 19:32</p><ol><li>下载gbkfonts http://learn.tsinghua.edu.cn:8080/2001315450/src/gbkfonts-linux-0.3.tar.gz<br/><br/></li><li>解压字体生成程序:<br/>
+tar -xvzf gbkfonts-linux-0.3.tar.gz<br/></li><li>进入解压后的目录,拷贝相应的程序到相应的目录:<br/>
+cp go appendconf gbkfonts /usr/local/bin<br/></li><li>修改go程序:<br/>
+vi /usr/local/bin/go<br/>
+找到下面的部分:<br/>
+gbkfonts ${opts[*]} $dir/simsun.ttf song<br/>
+gbkfonts ${opts[*]} $dir/simkai.ttf kai<br/>
+gbkfonts ${opts[*]} $dir/simhei.ttf hei<br/>
+gbkfonts ${opts[*]} $dir/simfang.ttf fs<br/>
+一般来说我们用这些字体程序就可以了,如果再没有其他的字体了,我们就可以将下面的我们不会用到的内容注释掉.<br/></li><li>拷贝我们需要的字体到/usr/local/share/texmf/fonts/truetype/chinese目录,一般来说这个字体程序是由 windows目录下拷过来的,在这里我们用到的是simsun.ttc,simhei.ttf,simkai.ttf,simfang.ttf四种字 体,并将simsun.ttc改名为simsun.ttf<br/><br/></li><li>生成字体:<br/>
+cd /usr/local/share/texmf<br/>
+go fonts/truetype/chines<br/>
+这样我们就会看到字体的生成过程了.<br/></li><li>执行下面的命令:<br/>
+appendconf /usr/local/share/texmf<br/><br/></li><li>修改Tex的配置文件:<br/>
+vi /usr/share/texmf/dvips/config/config.ps<br/>
+找到 o |lpr 一行,将其注释掉,在下面加入下面一行:<br/>
+p +cjk.map<br/></li><li>更新Tex字体数据库:<br/>
+mktexlsr</li></ol><div>And then, enjoy it:)</div></div></div></span>
+</div>
+<hr>
+<a name="45853"/>
+
+<div>
+<span><div><br/></div><div><br/></div><div>看了一下，Overleaf 目前用的是 Debian 的 TeX Live 2016。这样 ctex 字体是不需要显式设置的，直接使用<br/>
+\documentclass{ctexart}<br/>
+或<br/>
+\usepackage{ctex}<br/>
+就可以了，默认使用简中的 Fandol 字体。XeLaTeX 或 LuaLaTeX 编译均可，但 PDFLaTeX 不行。</div><div dir="auto"><p>fontset=ubuntu<br/>
+这个选项不建议使用。原因是 Ubuntu<br/>
+采用的文鼎的报宋体，但并没有严格按文鼎当前的发布区分为简中、繁中两个字体，而是由非专业人员乱改把两个字体拼成一个，结果对简中用户，标点格式不符合<br/>
+规定；对台湾繁中用户，字型不对，都无法在正式场合使用。其次报宋体也不适合排版正式文章，可惜文鼎没有免费发布其书宋体。楷体也有类似的问题。文泉驿的<br/>
+黑体问题不大。</p></div><div><br/></div><div>目前 ctex 对 Linux 下自动检测并使用的是符合中国大陆标准的 Fandol 字体。缺点是不能使用 PDFLaTeX。</div><div><br/></div><div><br/></div><div>% !TEX engine=xelatex<br/>
+\usepackage{mathspec}<br/>
+\usepackage{ctex}<br/></div></span>
+</div>
+<hr>
+<a name="45855"/>
+
+<div>
+<span><div><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语">XeTeX中文排版之胡言乱语</div><div title="XeTeX中文排版之胡言乱语">比较新的关于latex的中文排版指导，采用的是xetex或xelatex排版引擎。不再需要那个矬矬的cjk宏包了。</div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div title="XeTeX中文排版之胡言乱语"><h2>中文排版例解</h2><p>下面的各个例子，可以通过xelatex命令编译成PDF文件，具体方法如下：</p><ol><li>将代码存成UTF-8编码的文本文件，如test.tex</li><li>使用xelatex命令编译存好的源码，如xelatex test.tex</li><li>使用PDF查看工具看结果</li></ol><h2><a href="https://github.com/ruanyf/moderncv#%E4%BD%BF%E7%94%A8ctex%E6%8E%92%E7%89%88%E4%B8%AD%E6%96%87"></a>使用CTeX排版中文</h2><p>CTeX大大简化了中文排版过程，只要复制了Windows里的字体，并使用TeX Live 2009及以后的版本，下面的代码就可产生出中文PDF文档。</p><div><pre>
+\documentclass{ctexart}
+\begin{document}
+中文宏包测试
+\end{document}
+</pre></div><p>也可以使用article类和ctex宏包：</p><div><pre>
+\documentclass{article}
+\usepackage{ctex}
+\begin{document}
+中文宏包测试
+\end{document}
+</pre></div></div><div><br/></div><div>该方法最为简便，CTeX功能也很强大，提供了不少中文排版实用功能，具体可参阅CTeX的文档。</div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div title="XeTeX中文排版之胡言乱语"><h2>使用xeCJK排版中文</h2><p>CTeX在XeLaTeX环境下实际是用xeCJK处理中文的，如果不想用CTeX这么复杂的包，也可以使用xeCJK处理中文。</p><div><pre>
+\documentclass[11pt]{article}
+\usepackage[BoldFont,SlantFont,CJKsetspaces,CJKchecksingle]{xeCJK}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\setCJKmonofont{SimSun}% 设置缺省中文字体\parindent 2em   %段首缩进
+
+\begin{document}
+\section{举例}
+\begin{verbatim}
+标点。
+\end{verbatim}
+
+汉字Chinese数学$x=y$空格
+\end{document}
+</pre></div><p>使用xeCJK直接处理中文时，字体的选择较自由些。</p><h2><a href="https://github.com/ruanyf/moderncv#%E7%9B%B4%E6%8E%A5%E7%94%A8xelatex%E6%8E%92%E7%89%88%E4%B8%AD%E6%96%87"></a>直接用XeLaTeX排版中文</h2><p>由于XeLaTeX可以手动设置字体，故可以用这种方法排版中文。该方法设置字体最为灵活，但在处理中英文混排的文件时，必须手动逐处指定每段英文的字体，否则英文也用中文字体显示，不大美观。</p><p>如果希望使用该方法，可以参考 <a href="http://www.heboliang.cn/archive/xetex-intro.html">http://www.heboliang.cn/archive/xetex-intro.html</a></p><h2><a href="https://github.com/ruanyf/moderncv#xetex%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84latex%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"></a>XeTeX：一个新的LaTeX中文排版解决方案</h2><p>以前使用CJK进行中文的排版，需要自己生成字体库，近日，出现了XeTeX，可以比较好的解决中文字体问题，不需要额外生成LaTeX字体库，直接使用计算机系统里的字体，本文以在Linux下为例说明XeTeX的使用。</p><p>操作系统: Ubuntu</p><p>TeX：除了texlive包外，还需要安装的包是texlive-xetex。</p><p>字体：可以使用fc-list查看你自己的字体库，注意字体的完整名称，在XeTeX里面会用到。</p><p>安装好后，开始一个例子，例子里面的字体是我计算机里面的一些字体，源文件必须是UTF8编码，这在Linux很容易。</p><p>源文件：xetex.tex</p><div><pre>
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{titlesec}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\titleformat{\section}{\Large\xbsong}{\thesection}{1em}{}
+
+\XeTeXlinebreaklocale &quot;zh&quot;
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\newfontfamily\song{Simsun (Founder Extended)}
+\newfontfamily\bwei{FZBeiWeiKaiShu-S19S}
+\newfontfamily\zbhei{FZZhanBiHei-M22T}
+\newfontfamily\xzt{FZXiaoZhuanTi-S13T}
+\newfontfamily\xbsong{FZXiaoBiaoSong-B05}
+\newfontfamily\dbsong{FZDaBiaoSong-B06}
+\newfontfamily\gulif{FZGuLi-S12T}
+\newfontfamily\gulij{FZGuLi-S12S}
+\newfontfamily\kai{FZKai-Z03}
+\newfontfamily\hei{FZHei-B01}
+\newfontfamily\whei{WenQuanYi Zen Hei}
+\newfontfamily\fsong{FZFangSong-Z02}
+\newfontfamily\lanting{FZLanTingSong}
+\newfontfamily\boya{FZBoYaSong}
+\newfontfamily\lishu{FZLiShu-S01}
+\newfontfamily\lishuII{FZLiShu II-S06}
+\newfontfamily\yao{FZYaoTi-M06}
+\newfontfamily\zyuan{FZZhunYuan-M02}
+\newfontfamily\xhei{FZXiHei I-Z08}
+\newfontfamily\xkai{FZXingKai-S04}
+\newfontfamily\ssong{FZShuSong-Z01}
+\newfontfamily\bsong{FZBaoSong-Z04}
+\newfontfamily\nbsong{FZNew BaoSong-Z12}
+\newfontfamily\caiyun{FZCaiYun-M09}
+\newfontfamily\hanj{FZHanJian-R-GB}
+\newfontfamily\songI{FZSongYi-Z13}
+\newfontfamily\hcao{FZHuangCao-S09}
+\newfontfamily\wbei{FZWeiBei-S03}
+\newfontfamily\huali{FZHuaLi-M14}
+\setmainfont{FZLanTingSong}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\begin{document}
+
+\title{\whei XeTeX使用小结}
+\author{\fsong 何勃亮}
+\date{\kai2009年6月21日}
+
+\maketitle
+
+\section{简介}
+以前使用CJK进行中文的排版，需要自己生成字体库，近日，出现了XeTeX，可以比较好的解决中文字体问题，不需要额外
+生成LaTeX字体库，直接使用计算机系统里的字体。
+
+\section{字体列表}
+本文使用了大量本机自带的字体。
+
+
+\begin{table}[htbp]
+\caption{字体列表}
+
+\centering\begin{tabular}{|l|c|r|}
+\hline\hei 字体 &amp; \hei 命令 &amp; \hei 字体效果 \\\hline\kai 宋体 &amp; \verb+\song+ &amp; \song 宋体 \\\kai 楷体 &amp; \verb+\kai+ &amp; \kai 楷体 \\\kai 黑体 &amp; \verb+\hei+ &amp; \hei 黑体 \\\kai 仿宋体 &amp; \verb+\fsong+ &amp; \fsong 仿宋体 \\\kai 文泉驿黑体 &amp; \verb+\whei+ &amp; \whei 文泉驿黑体 \\\kai 书宋体 &amp; \verb+\ssong+ &amp; \ssong 书宋体 \\\kai 报宋体 &amp; \verb+\bsong+ &amp; \bsong 报宋体 \\\kai 新报宋体 &amp; \verb+\nbsong+ &amp; \nbsong 新报宋体 \\\kai 兰亭宋体 &amp; \verb+\lanting+ &amp; \lanting 兰亭宋体 \\\kai 博雅宋体 &amp; \verb+\boya+ &amp; \boya 博雅宋体 \\\kai 宋体一 &amp; \verb+\songI+ &amp; \songI 宋体一 \\\kai 隶书 &amp; \verb+\lishu+ &amp; \lishu 隶书 \\\kai 隶书二 &amp; \verb+\lishuII+ &amp; \lishuII 隶书二 \\\kai 古隶简体 &amp; \verb+\gulij+ &amp; \gulij 古隶简体 \\\kai 古隶繁体 &amp; \verb+\gulif+ &amp; \gulif 古隶繁体 \\\kai 华隶书 &amp; \verb+\huali+ &amp; \huali 华隶书 \\\kai 小标宋 &amp; \verb+\xbsong+ &amp; \xbsong 小标宋 \\\kai 大标宋 &amp; \verb+\dbsong+ &amp; \dbsong 大标宋 \\\kai 小篆体 &amp; \verb+\xzt+ &amp; \xzt 小篆体 \\\kai 姚体 &amp; \verb+\yao+ &amp; \yao 姚体 \\\kai 准圆 &amp; \verb+\zyuan+ &amp; \zyuan 准圆 \\\kai 细黑一 &amp; \verb+\xhei+ &amp; \xhei 细黑一 \\\kai 行楷书 &amp; \verb+\xkai+ &amp; \xkai 行楷书 \\\kai 彩云体 &amp; \verb+\caiyun+ &amp; \caiyun 彩云体 \\\kai 汉简书 &amp; \verb+\hanj+ &amp; \hanj 汉简书 \\\kai 魏碑体 &amp; \verb+\wbei+ &amp; \wbei 魏碑体 \\\hline\end{tabular}
+\end{table}
+
+\end{document}
+</pre></div><p>编译，编译需要的程序是xelatex，而不是latex，需要注意下：</p><div>xelatex xetex.tex<br/></div></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div title="XeTeX中文排版之胡言乱语">编译结果是xetex.pdf，下图是截图。</div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><img src="cnLaTeX_files/ubfwo1dy.bmp" type="image/bmp"/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div><div style="font-weight: bold; font-size: 15px;" title="XeTeX中文排版之胡言乱语"><br/></div></span>
+</div></body></html> 

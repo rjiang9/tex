@@ -1,0 +1,146 @@
+\documentclass{article}
+
+\usepackage{fontspec,xunicode,xltxtra,lipsum,amsmath}
+\usepackage{titlesec}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+\usepackage{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage{verbatim}
+\usepackage{verbatimbox}
+\usepackage{graphicx} 		% 插入图片
+\usepackage{setspace}
+\usepackage{indentfirst}             									% 段首缩进
+\XeTeXlinebreaklocale "zh"    	           							% 中文断行
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt			% 中文断行
+\renewcommand{\baselinestretch}{1.25}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+% \setdefaultlanguage{english}  		% 设置默认语言 english | chinese
+
+% 设置字体
+\setsansfont{Calibri}
+\setmainfont[BoldFont=SimHei]{SimHei}
+
+\titleformat{\section}{\Large\song}{\thesection}{1em}{}
+
+% 新定义字体
+\newfontfamily\shu{FZShuTi}                           % 方正舒体
+%\newfontfamily\nming{MingLiU_HKSCS} 		% 新细明体
+\newfontfamily\lishu{LiSu} 								% 隶书
+\newfontfamily\hei{SimHei} 								% 黑体
+\newfontfamily\yahei{Microsoft YaHei} 			% 微软雅黑
+\newfontfamily\henghei{Microsoft JhengHei}  % 微軟正黑體
+\newfontfamily\song{SimSun}  			% 宋体
+\newfontfamily\nsong{NSimSun}  		% 新宋体
+\newfontfamily\yao{FZYaoTi}                % 方正姚体
+\newfontfamily\ming{MingLiU} 			% 细明体
+\newfontfamily\youyuan{YouYuan}		% 幼圆
+\newfontfamily\kai{KaiTi}         			% 楷体
+\newfontfamily\cai{STCaiyun}   			% 华文彩云
+\usepackage{enumitem}               % list
+\setlist[enumerate]{itemsep=0mm}    % List Line space
+
+\usepackage{paralist}
+
+\usepackage{listings} % needed for the inclusion of source code
+\lstset{basicstyle = \ttfamily, frame      = single}
+
+% \makeindex                             % 加索引
+% \index{法华经}
+
+\begin{document}
+
+\title{\hei XeTeX使用小结}
+\author{\song 江长里}
+\date{\kai 2018年2月21日}
+\maketitle
+
+\tableofcontents
+\newpage
+
+
+%%%% 段落首行缩进两个字 %%%%
+\makeatletter
+%\let\@afterindentfalse\@afterindenttrue
+%\@afterindenttrue
+%\makeatother
+%\setlength{\parindent}{2em}  %中文缩进两个汉字位
+
+\section{简介}
+(默认字体) 以前使用CJK进行中文的排版，需要自己生成字体库，近日，出现了XeTeX，\yao （姚体）可以比较好的解决中文字体问题，不需要额外
+生成LaTeX字体库，\kai （楷体）直接使用计算机 \henghei （微軟正黑體）系统里的字体。
+
+
+
+\section{列出source code}
+  
+\lstinputlisting[language=Tex]{source.tex}
+
+\section{List}
+%\begin{itemize}
+	\item 工人
+	\item 农民 
+	\item 学生 
+\end{itemize}
+\begin{compactitem}
+	\item 《霍元甲》:  
+	\item   《妙法莲华经》:  
+	\item    寒山拾得: 
+\end{enumerate}
+
+\lstinputlisting[language=Tex]{list.tex}
+
+
+
+
+\section{字体列表}
+本文使用了大量本机自带的字体。
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\caption{字体列表 office station}
+
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\hei 字体 & \hei 命令 & \hei 字体效果 \\
+\hline
+
+\kai 宋体 & \verb+\song+ & \song 宋体 \\
+\kai 新宋体 & \verb+\nsong+ & \nsong 新宋体 \\
+\kai 楷体 & \verb+\kai+ & \kai 楷体 \\
+\kai 黑体 & \verb+\hei+ & \hei 黑体 \\
+\kai 隶书 & \verb+\lishu+ & \lishu 隶书 \\
+\kai 方正舒体 & \verb+\shu+ & \shu  方正舒体 \\
+\kai 方正姚体 & \verb+\yao+ & \yao 方正姚体 \\
+\kai 幼圆 & \verb+\youyuan+ & \youyuan 幼圆 \\
+\kai 微软雅黑 & \verb+\yahei+ & \yahei 微软雅黑 \\
+\kai 微軟正黑體 & \verb+\henghei+ & \henghei 微軟正黑體 \\
+\kai 細明體 & \verb+\ming+ & \ming 細明體 \\
+\kai 新细明体 & \verb+\nming+ & \nming 新细明体 \\
+\kai 华文彩云 & \verb+\cai+ & \cai 华文彩云 \\
+
+
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+图片插入效果图：
+    \begin{center}
+		\includegraphics[width=1\textwidth]{sea.jpg}
+	\end{center}
+
+
+% \printindex                             % 印索引	
+	
+\end{document}
+

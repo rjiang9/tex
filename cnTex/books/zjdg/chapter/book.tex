@@ -1,0 +1,203 @@
+% -*- coding: utf-8 -*-
+
+Q: xelatex下如何使用中文数字编号
+例如我想把\subsubsection{}编号写成“一、二、三、……”这样的，以前是latex+latex+dvipdfmx来编译的：
+\renewcommand\thesubsubsection{\CJKnumber{\arabic{subsubsection}}、}
+可是现在这个不能用了，请问xelatex下如何做？谢谢！
+
+A1：导言区
+\usepackage{enumitem}
+\AddEnumerateCounter{\chinese}{\chinese}{}
+正文
+\begin{enumerate}[label={\chinese*、},labelsep=0pt]
+  \item 内容清晰
+  \item 格式美观
+\end{enumerate}
+
+A2 （using A1）:
+\usepackage[Options] {xeCJK}
+宏包选项
+BoldFont:     启用 CJK粗体字
+SlantFont:    启用 斜体字 slshape
+fallback:      启用备用字体功能
+CJKnumber:   调用 CJKnumb 宏包
+CJKchecksingle: 避免单个汉字单独占一行
+nospace:      忽略 CJK 文字之间的空格(默认行为)
+space:        保留 CJK 文字之间的空格
+------
+中文章节
+    \usepackage{titlesec}  
+    \renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}  
+    \newcommand{\sectionname}{节}  
+    \renewcommand{\figurename}{图}  
+    \renewcommand{\tablename}{表}  
+    \renewcommand{\bibname}{参考文献}  
+    \renewcommand{\contentsname}{目~录}  
+    \renewcommand{\listfigurename}{图~目~录}  
+    \renewcommand{\listtablename}{表~目~录}  
+    \renewcommand{\indexname}{索~引}  
+    \renewcommand{\abstractname}{\Large{摘~要}}  
+    \newcommand{\keywords}[1]{\\ \\ \textbf{关~键~词}：#1}  
+    \titleformat{\chapter}[block]{\center\Large\bf}{\chaptername}{20pt}{}  
+    \titleformat{\section}[block]{\large\bf}{\thesection}{10pt}{}  
+
+
+
+
+
+
+\usepackage[Options] {xeCJK}
+宏包选项
+BoldFont:     启用 CJK粗体字
+SlantFont:    启用 斜体字 slshape
+fallback:      启用备用字体功能
+CJKnumber:   调用 CJKnumb 宏包
+CJKchecksingle: 避免单个汉字单独占一行
+nospace:      忽略 CJK 文字之间的空格(默认行为)
+space:        保留 CJK 文字之间的空格
+
+
+\usepackage{enumitem}  %列表縮進
+\begin{enumerate}[fullwidth,itemindent=2em,label=(\arabic*)]
+
+Footnotesize:
+https://tex.stackexchange.com/questions/24599/what-point-pt-font-size-are-large-etc
+Command             10pt    11pt    12pt
+\tiny               5       6       6
+\scriptsize         7       8       8
+\footnotesize       8       9       10
+\small              9       10      10.95
+\normalsize         10      10.95   12
+\large              12      12      14.4
+\Large              14.4    14.4    17.28
+\LARGE              17.28   17.28   20.74
+\huge               20.74   20.74   24.88
+\Huge               24.88   24.88   24.88
+
+
+% 插入图片在正文当中插入一张图片很简单，使用\includegraphics{文件名}就可以了。
+\usepackage{graphicx}
+\includegraphics[height=15pt]{hit300.png}
+
+% \includegraphics的常用选项有：
+%     height，指定插入图片的高度
+%    width，指定插入图片的宽度
+%    scale，指定插入图片的放大倍数
+%    angle，指定插入图片的旋转角度，顺时针方向为正
+%    draft，变为草稿模式，此时不读取图片，最终的输出结果只有一个和图片大小一样的框框，可以加快编译速度。可以在终稿之前使用\usepackage[draft]{graphicx}来加快编译速度，终稿时去掉这个选项。
+
+%图形环境： 单纯使用\includegraphics插入的图形没有编号，也没有办法引用什么的，比较麻烦。因此LaTeX提供了figure环境，使用它插入的图会自动编号，并且可以被交叉引用。figure环境的用法如下：
+
+\begin{figure}[选项]
+\centering % 使后面的内容居中
+\includegraphics{..}
+\caption{图标题}
+\label{供引用的标签}
+\end{figure}figure环境会产生一个浮动的图形对象，LaTeX会自动地将它放置到美观的位置上。在选项中可以指定LaTeX放置浮动图片的位置优先次序。其中h表示here，表示放置在插入处。t表示top，页面的顶端。b表示bottom，页面的底端。p表示page，单独的图片页。默认的选项是[tbp]，不过大家写文章的时候都比较愿意用[htbp]。meowmeow meow..
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\textwidth]{hit300.png}
+\caption{A 300 Hit!}
+\label{fig:300}
+\end{figure}
+
+figure \ref{fig:300} will show when you make an accurate hit in osu!.
+
+由于以上代码存在交叉引用，所以需要编译两遍。
+
+简单表格
+\begin{tabular}{|r||l|}
+    \hline
+    $x$ & $x^2$ \\
+    \hline \hline
+    1 & 1  \\ \hline
+    2 & 4  \\ \cline{1-1}
+    3 & 9  \\ \hline
+    4 & 16 \\ \hline
+\end{tabular}
+
+浮动表格环境
+浮动表格环境跟浮动图形环境类似，也是自动编号并且自动排版的表格环境。它的用法也跟浮动图形环境类似，把figure换成table，\includegraphics换成tabular环境就可以了。\begin{table}[htbp]
+\centering
+\begin{tabular}{|r||l|}
+    \hline
+    $x$ & $x^2$ \\
+    \hline \hline
+    1 & 1  \\ \hline
+    2 & 4  \\ \cline{1-1}
+    3 & 9  \\ \hline
+    4 & 16 \\ \hline
+\end{tabular}
+\caption{Value of $x^2$}
+\label{tbl:square}
+\end{table}
+Table \ref{tbl:square} is of nonsense....
+
+
+跨列表格使用\multicolumn可以生成一个跨列单元格。用法如下：\multicolumn{列数}{对齐方式}{单元格内容}
+
+\begin{tabular}{|r||l|}
+    \hline
+    $x$ & $x^2$ \\
+    \hline \hline
+    1 & 1  \\ \hline
+    2 & 4  \\ \cline{1-1}
+    3 & 9  \\ \hline
+    4 & 16 \\ \hline
+    \multicolumn{2}{|c|}{...}\\ \hline
+\end{tabular}
+
+跨行表格要做出跨行表格，需要使用multirow宏包。\usepakcage{multirow}multirow宏包提供了\multirow产生跨行单元格。\multirow{列数}{宽度}{文本}宽度可以写成*使得自动适应，也可指定长度使其中文本得以折行。\begin{tabular}{|r||l|}
+    \hline
+    $x$ & $x^2$ \\
+    \hline \hline
+    $-1$ & \multirow{2}{*}{1} \\ \cline{1-1}
+    1 & \\ \hline
+    2 & 4  \\ \cline{1-1}
+    3 & 9  \\ \hline
+    4 & 16 \\ \hline
+    \multicolumn{2}{|c|}{...}\\ \hline
+\end{tabular}
+
+跨页表格使用tabular环境生成的表格是一个不可分割的整体，要弄出长长的跨页表格用它肯定是不行的了。因此这里再介绍一下longtable宏包。\usepackage{longtable}它提供了longtable环境，在使用长表的时候代替tabular环境。用法比较复杂：\begin{longtable}{对齐方式}
+\caption{标题}\label{标签}\\ % ←爱写不写
+表头\\
+可有可无的分隔线\hline什么的。。。
+\endfirsthead
+续表表头\\
+可有可无的分隔线\hline什么的。。。
+\endhead
+表格末尾的分隔线什么的。。。
+\endfoot
+长长的表格内容。。
+\end{longtable}
+
+%\part{部分标题}
+\chapter{卷二}这一章我们介绍这些内容。
+\section{节标题}这一节我们介绍这些内容。
+\subsection{小节标题}这一小节我们介绍这些内容。
+\subsubsection{子节标题}这一子节我们介绍这些内容。
+\paragraph{段标题}这一段我们介绍这些内容。
+\subparagraph{小段标题}这一小段我们介绍这些内容。
+
+用LaTeX画图。。
+比较好用的画图包是TikZ。去看tikz宏包的文档吧，实在是太厚了。但是画图效果真不是盖的。
+注：使用XeLaTeX引擎可能会使TikZ的一些填充效果变得很糟糕。
+建议的方法是使用pdfLaTeX进行绘图，使用standalone文档类生成一个pdf图片供XeLaTeX插入。
+
+环境
+枚举环境
+\begin{itemize}
+ \item XXX is a big SB.
+ \item YYY is a big SB.
+ \item ZZZ is a big SB.
+\end{itemize}
+
+下面列出一些正文中常用的环境及其作用。flushleft:环境中的内容居左。
+flushright:环境中的内容居右。
+center:环境中的内容居中。
+itemize:无编号列表
+enumerate:有编号列表
+description:带描述列表
+quote:引用，使得整段缩进
+verse:诗歌专用，\\可以断行，两个空行的分段则生成一个空行。

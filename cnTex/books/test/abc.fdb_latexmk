@@ -1,0 +1,12 @@
+# Fdb version 3
+["pdflatex"] 1518633453 "abc.tex" "abc.pdf" "abc" 1518633454
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247593067 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Program Files/MiKTeX 2.9/tex/latex/base/minimal.cls" 1492211338 2028 a218fa4d45e39fff1443d6a3d32ba3d7 ""
+  "C:/Users/rjiang/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1518556386 4061325 21a04f005ca9d5a213f041e01436fd97 ""
+  "C:/Users/rjiang/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1518016965 80423 3cfba73105275d3ad410701d89fbdf7a ""
+  "abc.aux" 1518633454 9 a94a2480d3289e625eea47cd1b285758 ""
+  "abc.tex" 1518633076 134 8aa59a60e64c86170588416866e3d980 ""
+  (generated)
+  "abc.log"
+  "abc.pdf"
+  "abc.aux"

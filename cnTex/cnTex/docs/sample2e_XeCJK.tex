@@ -1,0 +1,49 @@
+%This is a sample LaTeX input file.  (Version of 11 April 1994.)
+%
+% A '%' character causes TeX to ignore all remaining text on the line,
+% and is used for comments like this one.
+
+\documentclass{article}      % Specifies the document class
+
+                             % The preamble begins here.
+\title{An Example Document 中文標題}  % Declares the document's title.
+\author{Leslie Lamport 林玉端}      % Declares the author's name.
+\date{May 20, 2011}      % Deleting this command produces today's date.
+
+\usepackage{fontspec} %加這個就可以設定字體 
+
+ 
+
+\usepackage{xeCJK} %讓中英文字體分開設置
+\setCJKmainfont{標楷體}
+%\setCJKmainfont{HanWangGSolid06cut1} %設定中文為系統上的字型，而英文不去更動，使用原TeX字型
+ % TTF 字型檔名: wtg-06cut1.ttf 超黑俏皮動物  PostScript 名: HanWangGSolid06cut1        CJK/FOP 字型名:hwgsc1
+
+\XeTeXlinebreaklocale "zh" %這兩行一定要加，中文才能自動換行
+
+\XeTeXlinebreakskip = 0pt plus 1pt %這兩行一定要加，中文才能自動換行
+
+
+\begin{document}             % End of preamble and beginning of text.
+
+\maketitle                   % Produces the title.
+中文
+This is an example input file.  Comparing it with
+the output it generates can show you how to
+produce a simple document of your own 中文.
+
+\section{Text}      % Produces section heading.  Lower-level
+                             % sections are begun with similar 
+                             % \subsection and \subsubsection commands.
+
+
+	\centering
+		\begin{tabular}{lcc}
+      \hline 
+			 1 & 2 項目& 3 項次\\
+			 4 & 5 項目 & 6 項次\\
+			\hline
+		\end{tabular}
+
+
+\end{document}               % End of document.
